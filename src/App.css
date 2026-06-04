@@ -11,7 +11,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   font-weight: bold;
-  color: white;
+  color: rgb(20, 0, 0);
 }
 
 .App-main {
@@ -25,13 +25,14 @@
   padding: 0.5rem;
   font-size: 1.25rem;
   border-radius: 5px;
-  width: 200px;
+  width: 300px;
 }
 
 .button {
   padding: 1rem;
   font-size: 1rem;
-  background-color: yellow;
+  background-color: #f4f410;
+  font-weight: bold;
   color: black;
   border-radius: 5px;
   cursor: pointer;
@@ -45,36 +46,45 @@
   color: white;
   padding: 1rem;
   width: 275px;
-  gap: 1rem;
+  gap: 2rem;
+  margin-top: 1rem;
+}
 
-  .todo-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    border: 3px solid green;
-    padding: 0.5rem;
-  }
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 140%;
+  border: 1px solid rgb(17, 175, 223);
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px rgb(17, 175, 223);
+  padding: 0.8rem;
+}
 
-  .checkbox {
-    font-size: 1.25rem;
-    padding: 1rem;
-    align-items: center;
-  }
+.checkbox {
+  align-items: center;
+  width: 18px;
+  height: 18px;
+  padding: 1rem;
+}
 
-  .task {
-    font-size: 1.25rem;
-    align-items: center;
-    padding: 1rem;
-  }
+.task {
+  font-size: 1.5rem;
+  align-items: center;
+  padding: 1rem;
+}
 
-  .delete-button {
-    padding: 0.5rem;
-    margin: 0.5rem;
-    font-size: 1rem;
-    background-color: red;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-  }
+.durchgestrichen {
+  text-decoration: line-through;
+  color: rgb(255, 255, 255);
+}
+
+.delete-button {
+  padding: 0.5rem;
+  font-size: 1.25rem;
+  background-color: rgb(233, 59, 59);
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100px;
 }
