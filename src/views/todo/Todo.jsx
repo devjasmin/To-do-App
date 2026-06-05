@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Button from "../../components/button/Button";
-import Checkbox from "../../components/checkbox/Checkbox";
+//import Checkbox from "../../components/checkbox/Checkbox";
 import TodoItem from "./components/todoItem/TodoItem";
 
 function Todo() {
