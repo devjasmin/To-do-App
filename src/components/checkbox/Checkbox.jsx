@@ -1,5 +1,5 @@
-function Checkbox(props) {
-  return <input type="checkbox" {...props} />;
+function Checkbox({ onChange, className }) {
+  return <input type="checkbox" onChange={onChange} className={className} />;
 }
 
 export default Checkbox;
