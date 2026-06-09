@@ -1,11 +1,11 @@
 import Button from "../../../../components/button/Button";
 import Checkbox from "../../../../components/checkbox/Checkbox";
 
-function TodoItem({ task, index, ToggleTask, DeleteTask }) {
+function TodoItem({ task, id, ToggleTask, DeleteTask }) {
   return (
     <div className="todo-item">
       <Checkbox
-        onChange={() => ToggleTask(index)}
+        onChange={() => ToggleTask(task.id)}
         className="checkbox"
       ></Checkbox>
 
@@ -17,7 +17,7 @@ function TodoItem({ task, index, ToggleTask, DeleteTask }) {
 
       <Button
         text="Delete"
-        onClick={() => DeleteTask(index)}
+        onClick={() => DeleteTask(task.id)}
         className="delete-button"
       />
     </div>

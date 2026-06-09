@@ -14,31 +14,35 @@ function Todo() {
 
   function addTask() {
     if (inputValue !== "") {
-      setTasks([...tasks, { text: inputValue, completed: false }]);
-      console.log("Add Task");
+      const id = crypto.randomUUID();
+
+      setTasks([...tasks, { text: inputValue, id, completed: false }]);
+      console.log("die ID lautet:", id);
+      //console.log("Add Task");
       setInputValue("");
     } else {
       alert("Bitte gib eine Aufgabe ein");
-      console.log("Input is empty");
+      //console.log("Input is empty");
     }
   }
 
-  function deleteTask(index) {
-    const newTasks = tasks.filter((task, i) => i !== index);
+  function deleteTask(id) {
+    const newTasks = tasks.filter((task) => task.id !== id);
     setTasks(newTasks);
-    console.log("Delete Task");
+    //console.log("Delete Task");
   }
 
-  function toggleTask(index) {
-    const newTasks = tasks.map((task, i) => {
-      if (i === index) {
+  function toggleTask(id) {
+    const newTasks = tasks.map((task) => {
+      if (task.id === id) {
         return { ...task, completed: !task.completed };
       }
       return task;
     });
+
     setTasks(newTasks);
-    //console.log("Toggle Task");
   }
+
   return (
     <div className="app">
       <header className="app-header">
@@ -55,11 +59,10 @@ function Todo() {
         </main>
         <div className="todo-list">
           {tasks.length === 0 ? <p>No tasks yet!</p> : null}
-          {tasks.map((task, index) => (
+          {tasks.map((task) => (
             <TodoItem
-              key={index}
+              key={task.id}
               task={task}
-              index={index}
               DeleteTask={deleteTask}
               ToggleTask={toggleTask}
             />
