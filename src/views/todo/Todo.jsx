@@ -7,12 +7,12 @@ function Todo() {
   const [inputValue, setInputValue] = useState("");
   const [tasks, setTasks] = useState([]);
 
-  function SaveInput(event) {
+  function saveInput(event) {
     setInputValue(event.target.value);
     // console.log(event.target.value);
   }
 
-  function AddTask() {
+  function addTask() {
     if (inputValue !== "") {
       setTasks([...tasks, { text: inputValue, completed: false }]);
       console.log("Add Task");
@@ -21,18 +21,15 @@ function Todo() {
       alert("Bitte gib eine Aufgabe ein");
       console.log("Input is empty");
     }
-    tasks.map((task) => {
-      //console.log(task.length);
-    });
   }
 
-  function DeleteTask(index) {
+  function deleteTask(index) {
     const newTasks = tasks.filter((task, i) => i !== index);
     setTasks(newTasks);
     console.log("Delete Task");
   }
 
-  function ToggleTask(index) {
+  function toggleTask(index) {
     const newTasks = tasks.map((task, i) => {
       if (i === index) {
         return { ...task, completed: !task.completed };
@@ -43,18 +40,18 @@ function Todo() {
     //console.log("Toggle Task");
   }
   return (
-    <div className="App">
-      <header className="App-header">
+    <div className="app">
+      <header className="app-header">
         To-do App
-        <main className="App-main">
+        <main className="<app-main">
           <input
             className="input"
             type="text"
             placeholder="Aufgabe eingeben..."
-            onChange={SaveInput}
+            onChange={saveInput}
             value={inputValue}
           />
-          <Button text="ADD" onClick={AddTask} className="button" />
+          <Button text="ADD" onClick={addTask} className="button" />
         </main>
         <div className="todo-list">
           {tasks.length === 0 ? <p>No tasks yet!</p> : null}
@@ -63,8 +60,8 @@ function Todo() {
               key={index}
               task={task}
               index={index}
-              DeleteTask={DeleteTask}
-              ToggleTask={ToggleTask}
+              DeleteTask={deleteTask}
+              ToggleTask={toggleTask}
             />
           ))}
         </div>

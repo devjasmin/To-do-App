@@ -1,8 +1,8 @@
-.App {
+.app {
   text-align: center;
 }
 
-.App-header {
+.app-header {
   background-color: #1258e5;
   height: 100vh;
   display: flex;
@@ -14,7 +14,7 @@
   color: rgb(20, 0, 0);
 }
 
-.App-main {
+.app-main {
   margin-top: 2rem;
   display: flex;
   align-items: center;
@@ -45,6 +45,8 @@
   color: white;
   padding: 1rem;
   min-width: 20vh;
+  overflow-y: auto;
+  overflow-x: hidden;
   gap: 2rem;
 }
 
@@ -73,7 +75,7 @@
   padding: 1rem;
 }
 
-.durchgestrichen {
+.strikethrough {
   text-decoration: line-through;
   color: rgb(255, 255, 255);
 }

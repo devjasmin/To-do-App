@@ -10,7 +10,7 @@ function TodoItem({ task, index, ToggleTask, DeleteTask }) {
       ></Checkbox>
 
       <div className="task">
-        <span className={task.completed ? "durchgestrichen" : ""}>
+        <span className={task.completed ? "strikethrough" : ""}>
           {task.text}
         </span>
       </div>
