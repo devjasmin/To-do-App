@@ -52,11 +52,16 @@ function Todo() {
             aria-label="Aufgabe eingeben"
             className="input"
             type="text"
-            placeholder="z.B. einkaufen"
+            placeholder="z.B.einkaufen..."
             onChange={saveInput}
             value={inputValue}
           />
-          <Button text="ADD" onClick={addTask} className="button" />
+          <Button
+            text="ADD"
+            onClick={addTask}
+            ariaLabel={"Aufgabe hinzufügen"}
+            className="button"
+          />
         </main>
         <div className="todo-list">
           {tasks.length === 0 ? <p>No tasks yet!</p> : null}
