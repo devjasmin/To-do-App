@@ -49,9 +49,10 @@ function Todo() {
         To-do App
         <main className="<app-main">
           <input
+            aria-label="Aufgabe eingeben"
             className="input"
             type="text"
-            placeholder="Aufgabe eingeben..."
+            placeholder="z.B. einkaufen"
             onChange={saveInput}
             value={inputValue}
           />

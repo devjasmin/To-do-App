@@ -7,6 +7,7 @@ function TodoItem({ task, id, ToggleTask, DeleteTask }) {
       <Checkbox
         onChange={() => ToggleTask(task.id)}
         className="checkbox"
+        ariaLabel={task.text}
       ></Checkbox>
 
       <div className="task">
@@ -17,6 +18,7 @@ function TodoItem({ task, id, ToggleTask, DeleteTask }) {
 
       <Button
         text="Delete"
+        ariaLabel={`Lösche Aufgabe ${task.text}`}
         onClick={() => DeleteTask(task.id)}
         className="delete-button"
       />
